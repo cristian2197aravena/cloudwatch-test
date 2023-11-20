@@ -118,6 +118,14 @@ resource "aws_security_group" "grupo_de_seguridad" {
 
   ingress {
     cidr_blocks = ["0.0.0.0/0"] // todas las ip
+    description = "Acceso al puerto 9200 desde el exterior"
+    from_port   = var.puerto_opensearch // puerto que vamos a abrir con la to_port
+    to_port     = var.puerto_opensearch
+    protocol    = "TCP" // protocolo que utilizaremos
+  }
+
+  ingress {
+    cidr_blocks = ["0.0.0.0/0"] // todas las ip
     description = "Acceso al puerto 80 desde el exterior"
     from_port   = var.puerto_lb // puerto que vamos a abrir con la to_port
     to_port     = var.puerto_lb

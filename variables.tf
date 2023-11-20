@@ -17,6 +17,12 @@ variable "puerto_lb" {
   default     = 80
 }
 
+variable "puerto_opensearch" {
+  description = "Puerto para el LB"
+  type        = number
+  default     = 9200
+}
+
 variable "tipo_instancia" {
   description = "Tipo de las instancias EC2"
   type        = string
